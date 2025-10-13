@@ -5,3 +5,4 @@ __pycache__/
 google_hack.json
 pyproject.toml
 uv.lock
+.vercel

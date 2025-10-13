@@ -1,0 +1,17 @@
+bcrypt>=4.3.0
+fastapi>=0.116.2
+uvicorn>=0.18.3
+passlib>=1.7.4
+pyjwt>=2.10.1
+firebase-admin>=7.1.0
+python-dotenv>=1.1.1
+python-multipart>=0.0.20
+openai-agents>=0.3.3
+openai>=0.27.0
+pydantic>=2.0
+typing-extensions>=4.5.0
+
+# Notes:
+# - Versions were taken from `pyproject.toml` when present and supplemented
+#   with commonly required packages inferred from imports (e.g. `openai`, `pydantic`).
+# - If you prefer exact pins, run `pip freeze` in a venv and replace these with exact versions.
