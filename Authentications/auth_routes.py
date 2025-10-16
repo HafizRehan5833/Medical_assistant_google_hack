@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from database.db import get_firestore_db
-from Authentications.utils import create_access_token, hash_password, verify_api_key, verify_password
+from Authentications.utils import create_access_token, hash_password,  verify_password
 from model.model import LoginUser, UserCreate, ResetPasswordRequest
 from datetime import datetime
 from google.cloud.firestore import Client
@@ -78,7 +78,7 @@ def create_user(user: UserCreate, db: Client = Depends(get_firestore_db)):
         raise HTTPException(status_code=500, detail=f"Registration failed: {e}")
 
 
-@Auth_router.post("/login", dependencies=[Depends(verify_api_key)])
+@Auth_router.post("/login")
 def login_user(user: LoginUser, db: Client = Depends(get_firestore_db)):
     try:
         users_collection = db.collection("signup")
